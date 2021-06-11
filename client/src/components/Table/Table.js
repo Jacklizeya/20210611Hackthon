@@ -10,7 +10,7 @@ export default function GardenTable() {
   const [gardenList, setGardenList] = useState(loadingMessage)
   useEffect(() => {
     const getAllGardens = async () => {
-      let fetchUrl = "/api/garden/get"
+      let fetchUrl = "/api/locations/listall"
       let response = await fetch(fetchUrl)
       let resObject = await response.json()
       let listResult = resObject.gardenList
@@ -19,9 +19,6 @@ export default function GardenTable() {
     }
     getAllGardens()
   }, [])
-
-  const history = useHistory()
-  const changeRoute = (val) => history.push(`/garden-page/${val}`)
 
   // Prevent re-rendering of data
   const columns = useMemo(() => columnHeaders, [])
@@ -78,7 +75,7 @@ export default function GardenTable() {
               {firstPageRows.map((row) => {
                 prepareRow(row);
                 return (
-                  <div onClick={() => changeRoute(row.values.name)} {...row.getRowProps()} className="tr">
+                  <div className="tr">
                     {row.cells.map((cell) => (
                       <div {...cell.getCellProps()} className="td">
                         {cell.render('Cell')}

@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Locations from './Location.js';
+import Table from './components/Table/Table'
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,6 +22,7 @@ function App() {
       </div>
     
       <Switch>
+        <Route path='table'> <Table /> </Route>
         <Route path="/"> <Locations/> </Route>
       </Switch>
     </Router>

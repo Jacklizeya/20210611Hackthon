@@ -3,7 +3,7 @@ import { TypeColumnFilter, SelectColumnFilter, NumberRangeColumnFilter } from ".
 export const columnHeaders = [
     {
         Header: 'Garden Name',
-        accessor: 'name',
+        accessor: 'locationName',
         Filter: TypeColumnFilter,
         sticky: 'left'
     },
@@ -12,13 +12,6 @@ export const columnHeaders = [
         accessor: 'address',
         Filter: TypeColumnFilter,
         sticky: 'left'
-    },
-    {
-        Header: 'Quadrant',
-        accessor: 'quadrant',
-        Filter: SelectColumnFilter,
-        sticky: 'left',
-        width: 80
     },
     /*{
         Header: 'Latitude',
@@ -37,20 +30,4 @@ export const columnHeaders = [
         accessor: 'plotSize',
         Filter: TypeColumnFilter
     },*/
-    {
-        Header: '# of Plots',
-        accessor: 'numberOfPlots',
-        Filter: NumberRangeColumnFilter,
-        disableFilters: true,
-        sticky: 'left',
-        width: 80
-    },
-    {
-        Header: 'Established',
-        accessor: 'established',
-        Filter: NumberRangeColumnFilter,
-        disableFilters: true,
-        sticky: 'left',
-        width: 80
-    },
 ]
