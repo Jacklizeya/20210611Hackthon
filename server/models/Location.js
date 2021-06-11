@@ -3,15 +3,23 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const locationSchema = new Schema({
-  locationname: {
+  locationName: {
     type: String,
     required: true,
     unique: true
   },
+  address: {
+    type: String,
+  },
   coordinates: {
-    type: Object
+    type: Object,
+    required: true
+  },
+  type: {
+    type: String
   }
 });
+
 
 const locationModel = mongoose.model("swimming", locationSchema, "swimming");
 
