@@ -65,8 +65,6 @@ router.get('/listall',
   async function(req, res, next) {
     try 
     {
-      const  type = req.params.id
-      console.log("All list requested '"+type+"'");
       locationlist = await Location.getDataByType();
       res.send(locationlist)
     } catch (error){

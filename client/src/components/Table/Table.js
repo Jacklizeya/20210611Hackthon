@@ -4,10 +4,12 @@ import { useSticky } from 'react-table-sticky'
 import { Styles } from './TableStyle'
 import { columnHeaders } from "./columns"
 import { useHistory } from "react-router-dom"
+import swimmingData from '../Map/mapData.json'
 
 export default function GardenTable() {
   const loadingMessage = [{name: 'Loading...', address: "This won't take long!"}]
   const [gardenList, setGardenList] = useState(loadingMessage)
+  
   useEffect(() => {
     const getAllGardens = async () => {
       let fetchUrl = "/api/locations/listall"
@@ -22,7 +24,7 @@ export default function GardenTable() {
 
   // Prevent re-rendering of data
   const columns = useMemo(() => columnHeaders, [])
-  const data = useMemo(() => gardenList, [gardenList]) 
+  const data = useMemo(() => swimmingData, []) 
 
   let tableInstance = useTable(
     {
