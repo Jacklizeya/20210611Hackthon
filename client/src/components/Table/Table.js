@@ -47,7 +47,7 @@ export default function GardenTable() {
 
     const firstPageRows = rows.slice(0,100)
 
-    return (
+    return null /*(
       <div 
         style={{
           display: 'flex', 
@@ -88,5 +88,5 @@ export default function GardenTable() {
           </div>
         </Styles>
       </div>
-      );
+      ); */
     }

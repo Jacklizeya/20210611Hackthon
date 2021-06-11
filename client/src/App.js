@@ -22,7 +22,7 @@ function App() {
       </div>
     
       <Switch>
-        <Route path='table'> <Table /> </Route>
+        <Route path='/table'> <Table /> </Route>
         <Route path="/"> <Locations/> </Route>
       </Switch>
     </Router>
