@@ -6,20 +6,21 @@ import { columnHeaders } from "./columns"
 import { useHistory } from "react-router-dom"
 import swimmingData from '../Map/mapData.json'
 
-export default function GardenTable() {
+export default function SwimmingTable() {
   const loadingMessage = [{name: 'Loading...', address: "This won't take long!"}]
-  const [gardenList, setGardenList] = useState(loadingMessage)
-  
+  const [swimmingList, setSwimmingList] = useState(loadingMessage)
+
   useEffect(() => {
-    const getAllGardens = async () => {
+    const getAllSwimming = async () => {
       let fetchUrl = "/api/locations/listall"
       let response = await fetch(fetchUrl)
+      console.log(response)
       let resObject = await response.json()
-      let listResult = resObject.gardenList
+      let listResult = resObject.swimmingList
 
-      setGardenList(listResult)
+      setSwimmingList(listResult)
     }
-    getAllGardens()
+    getAllSwimming()
   }, [])
 
   // Prevent re-rendering of data
@@ -33,7 +34,7 @@ export default function GardenTable() {
       initialState: {
         sortBy: [
             {
-                id: 'name',
+                id: 'locationName',
                 desc: false
             }
         ]
@@ -52,7 +53,7 @@ export default function GardenTable() {
     return null /*(
       <div 
         style={{
-          display: 'flex', 
+          display: 'flex',
           justifyContent: 'center',
           border: "4px solid #05386B",
           borderRadius: '20px',

@@ -25,6 +25,7 @@ const locationModel = mongoose.model("swimming", locationSchema, "swimming");
 
 async function getDataByType(type=""){
   if ( type===""){
+    console.log(locationModel.find({}))
     return locationModel.find({});
   }else{
     return locationModel.find({type}).exec();
