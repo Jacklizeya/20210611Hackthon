@@ -24,10 +24,10 @@ export const columnHeaders = [
         accessor: 'coordinates.lng',
         Filter: TypeColumnFilter,
         disableFilters: true
-    },
-    {
-        Header: 'Plot Size (sqft)',
-        accessor: 'plotSize',
-        Filter: TypeColumnFilter
     },*/
+    {
+        Header: 'Pool Type',
+        accessor: 'type',
+        Filter: TypeColumnFilter
+    },
 ]

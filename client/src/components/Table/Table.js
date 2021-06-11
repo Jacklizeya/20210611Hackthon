@@ -10,7 +10,7 @@ export default function SwimmingTable() {
   const loadingMessage = [{name: 'Loading...', address: "This won't take long!"}]
   const [swimmingList, setSwimmingList] = useState(loadingMessage)
 
-  useEffect(() => {
+  /*useEffect(() => {
     const getAllSwimming = async () => {
       let fetchUrl = "/api/locations/listall"
       let response = await fetch(fetchUrl)
@@ -21,7 +21,7 @@ export default function SwimmingTable() {
       setSwimmingList(listResult)
     }
     getAllSwimming()
-  }, [])
+  }, []) */
 
   // Prevent re-rendering of data
   const columns = useMemo(() => columnHeaders, [])
@@ -50,7 +50,7 @@ export default function SwimmingTable() {
 
     const firstPageRows = rows.slice(0,100)
 
-    return null /*(
+    return (
       <div 
         style={{
           display: 'flex',
@@ -91,5 +91,5 @@ export default function SwimmingTable() {
           </div>
         </Styles>
       </div>
-      ); */
+      );
     }
