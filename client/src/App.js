@@ -21,8 +21,8 @@ function App() {
         <Route path='/home'> 
           <Homepage />
         </Route>
-        <Route path='/map'>
-          <Map />
+        <Route path='/table'>
+          <Table />
         </Route>
         <Route path="/"> <Locations/> </Route>
       </Switch>

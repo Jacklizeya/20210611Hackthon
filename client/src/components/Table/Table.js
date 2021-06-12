@@ -3,16 +3,14 @@ import { useTable, useSortBy, useFilters, useBlockLayout } from "react-table"
 import { useSticky } from 'react-table-sticky'
 import { Styles } from './TableStyle'
 import { columnHeaders } from "./columns"
-import { useHistory } from "react-router-dom"
-import swimmingData from '../Map/mapData.json'
 
 export default function SwimmingTable() {
   const loadingMessage = [{name: 'Loading...', address: "This won't take long!"}]
   const [swimmingList, setSwimmingList] = useState(loadingMessage)
 
-  /*useEffect(() => {
+  useEffect(() => {
     const getAllSwimming = async () => {
-      let fetchUrl = "/api/locations/listall"
+      let fetchUrl = "/api/swimming/get"
       let response = await fetch(fetchUrl)
       console.log(response)
       let resObject = await response.json()
@@ -21,11 +19,11 @@ export default function SwimmingTable() {
       setSwimmingList(listResult)
     }
     getAllSwimming()
-  }, []) */
+  }, [])
 
   // Prevent re-rendering of data
   const columns = useMemo(() => columnHeaders, [])
-  const data = useMemo(() => swimmingData, []) 
+  const data = useMemo(() => swimmingList, [swimmingList]) 
 
   let tableInstance = useTable(
     {
