@@ -19,6 +19,6 @@ export const columnHeaders = [
         Header: 'Pool Type',
         accessor: 'type',
         Filter: SelectColumnFilter,
-        width: 100
+        width: 110
     },
 ]

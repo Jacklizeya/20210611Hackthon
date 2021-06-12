@@ -69,7 +69,7 @@ export default function SwimmingTable() {
                 </div>
               ))}
             </div>
-            <div {...getTableBodyProps()} className="body">
+            <div {...getTableBodyProps()} className="body-group">
               {firstPageRows.map((row) => {
                 prepareRow(row);
                 return (
