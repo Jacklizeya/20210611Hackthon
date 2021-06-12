@@ -6,7 +6,6 @@ import {
   useLoadScript
 } from "@react-google-maps/api"
 import mapStyles from "./mapStyles"
-import swimmingData from './mapData.json'
 
 const libraries = ["places"]
 const mapContainerStyle = {
@@ -26,11 +25,7 @@ const options = {
   zoomControl: true
 }
 
-export default function GardenMap({
-  isFormDisplayed,
-  formCoordinates,
-  setFormCoordinates
-}) {
+export default function GardenMap() {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries
@@ -40,36 +35,23 @@ export default function GardenMap({
   const loadingMessage = [{name: 'Loading...', address: "This won't take long!", "coordinates":{"lat":"0","lng":"0"}}]
   const [swimmingList, setSwimmingList] = useState(loadingMessage)
   
-  /*useEffect(() => {
+  useEffect(() => {
     const getAllSwimming = async () => {
-      let fetchUrl = "/api/locations/listall"
+      let fetchUrl = "/api/swimming/get"
       let response = await fetch(fetchUrl)
-      console.log(response)
       let resObject = await response.json()
       let listResult = resObject.swimmingList
 
       setSwimmingList(listResult)
     }
     getAllSwimming()
-  }, []) */
+  }, [])
 
   // Prevent re-rendering of data
 
   // Prevent re-rendering of data
-  const data = useMemo(() => swimmingData, [])
-  console.log(data)
-
-
-  useEffect(() => {
-    if (isFormDisplayed) {
-      setFormCoordinates({
-        lat: 0,
-        lng: 0
-      })
-    }
-    // eslint-disable-next-line
-  }, [isFormDisplayed])
-
+  const data = useMemo(() => swimmingList, [swimmingList])
+  
   const [selected, setSelected] = React.useState(null)
 
   if (loadError) return "Error loading maps"

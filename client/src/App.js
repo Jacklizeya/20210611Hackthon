@@ -1,15 +1,9 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import './App.css';
 import Locations from './Location.js';
 import Table from './components/Table/Table'
 import Map from './components/Map/Map'
 import Homepage from './pages/homepage/Homepage';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom"
 
 function App() {
 
@@ -26,6 +20,9 @@ function App() {
       <Switch>
         <Route path='/home'> 
           <Homepage />
+        </Route>
+        <Route path='/map'>
+          <Map />
         </Route>
         <Route path="/"> <Locations/> </Route>
       </Switch>
