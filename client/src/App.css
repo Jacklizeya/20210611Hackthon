@@ -50,16 +50,20 @@ body {
   color: black;
   display:flex;
   justify-content: space-between;
+  padding: 10px;
 }
 
 .page-title {
-  color: black;
+  color: white;
   background-color: #FC4445;
   margin: 0;
 }
 
 .links {
+  display: flex;
+  flex-direction: column;
   text-align: right;
+  align-content: center;
 }
 
 .links a {

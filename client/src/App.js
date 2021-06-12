@@ -12,9 +12,7 @@ function App() {
       <div className='nav-bar'>
         <h1 className='page-title'>Calgary Swimming Pools</h1>
         <div className="links">
-          <Link to="/"> Home </Link> <br/>
-          <Link to="/swimmingpool"> All Swimming pool </Link> <br/>
-          <Link to="/placeholder"> Placeholder </Link> <br/>
+          <Link to="/"> Home </Link>
         </div>
       </div>
     
@@ -22,9 +20,6 @@ function App() {
         <div className='page-content'>
           <Route path='/home'> 
             <Home />
-          </Route>
-          <Route path="/">
-            <Locations /> 
           </Route>
         </div>
       </Switch>
