@@ -45,11 +45,14 @@ const Swimming = mongoose.model("Swimming", locationSchema, "swimming")
 
 const listLocations = async () => await Swimming.find({})
 
+const listLocationsByType = async () => await Swimming.find({ type: type})
+
 // General db functions
 const closeDb = async () => await db.close({ force: true })
 
 module.exports = {
   closeDb,
   Swimming,
-  listLocations
+  listLocations,
+  listLocationsByType
 }

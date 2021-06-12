@@ -1,8 +1,6 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
 import './App.css';
 import Locations from './Location.js';
-import Table from './components/Table/Table'
-import Map from './components/Map/Map'
 import Homepage from './pages/homepage/Homepage';
 
 function App() {
@@ -21,10 +19,9 @@ function App() {
         <Route path='/home'> 
           <Homepage />
         </Route>
-        <Route path='/table'>
-          <Table />
+        <Route path="/">
+          <Locations /> 
         </Route>
-        <Route path="/"> <Locations/> </Route>
       </Switch>
     </Router>
 
