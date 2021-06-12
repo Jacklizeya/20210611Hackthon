@@ -28,8 +28,8 @@ export const Styles = styled.div`
         color: #edf5e1;
     },
     .td {
-        border: 1px solid #ddd;
         overflow: hidden;
+        width: 200px;
 
       :last-child {
         border-right: 0;
@@ -61,11 +61,9 @@ export const Styles = styled.div`
       }
 
       [data-sticky-last-left-td] {
-        box-shadow: 2px 0px 3px #ccc;
       }
 
       [data-sticky-first-right-td] {
-        box-shadow: -2px 0px 3px #ccc;
       }
     }
   }

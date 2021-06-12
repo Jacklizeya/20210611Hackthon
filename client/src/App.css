@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-color: #3feee6;
+}
+
+.page-content {
+  padding-top: 20px;
+}
+
+.nav-bar {
+  background-color: #FC4445;
+  color: black;
+  display:flex;
+  justify-content: space-between;
+}
+
+.page-title {
+  color: black;
+  background-color: #FC4445;
+  margin: 0;
+}
+
+.links {
+  text-align: right;
+}
+
+.links a {
+  color: white;
+}
