@@ -55,9 +55,6 @@ export default function SwimmingTable() {
         style={{
           display: 'flex',
           justifyContent: 'center',
-          border: "4px solid #05386B",
-          borderRadius: '20px',
-          backgroundColor: '#edf5e1'
         }}
       >
         <Styles>

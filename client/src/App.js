@@ -3,6 +3,7 @@ import './App.css';
 import Locations from './Location.js';
 import Table from './components/Table/Table'
 import Map from './components/Map/Map'
+import Homepage from './pages/homepage/Homepage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -23,8 +24,9 @@ function App() {
       </div>
     
       <Switch>
-        <Route path='/table'> <Table /> </Route>
-        <Route path='/map'> <Map /> </Route>
+        <Route path='/home'> 
+          <Homepage />
+        </Route>
         <Route path="/"> <Locations/> </Route>
       </Switch>
     </Router>
