@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Styles = styled.div`
   .table {
     font-family: Arial, Helvetica, sans-serif;
-    color:black;
+    color:rgb(5, 56, 107);;
     
 
     .tr {
@@ -16,7 +16,7 @@ export const Styles = styled.div`
       :hover {
           background-color: #ddd
       }
-      background-color: #CAFAFE;
+      background-color: #edf5e1;
       border: 1px solid rgb(5, 56, 107);
     }
 
