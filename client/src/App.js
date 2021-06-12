@@ -14,7 +14,7 @@ function App() {
   return (
 
     <Router>
-      <div className = "navigation bar">
+      <div className = "navigation-bar">
         <Link to="/"> Home </Link> <br/>
         <Link to="/swimmingpool"> All Swimming pool </Link> <br/>
         <Link to="/placeholder"> Placeholder </Link> <br/>
