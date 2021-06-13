@@ -11,9 +11,10 @@ const libraries = ["places"]
 const mapContainerStyle = {
   width: "50vw",
   height: "685px",
-  border: "4px solid #05386B",
+  border: "4px solid #A3BCB6",
   borderRadius: "20px",
-  minWidth: "575px"
+  minWidth: "575px",
+  boxShadow: "10px 10px 10px rgb(0 0 0 / 40%), 10px 10px 10px rgb(0 0 120 / 40%)"
 }
 const center = {
   lat: 51.01,
