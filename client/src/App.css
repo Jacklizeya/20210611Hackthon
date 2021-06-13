@@ -25,7 +25,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  /* color: #61dafb; */
 }
 
 @keyframes App-logo-spin {
@@ -38,7 +38,7 @@
 }
 
 body {
-  background-color: #3feee6;
+  background-color: #e1f5fe;
 }
 
 .page-content {
@@ -46,7 +46,7 @@ body {
 }
 
 .nav-bar {
-  background-color: #FC4445;
+  background-color: #afc2cb;
   color: black;
   display:flex;
   justify-content: space-between;
@@ -54,8 +54,8 @@ body {
 }
 
 .page-title {
-  color: white;
-  background-color: #FC4445;
+  color: rgb(87, 87, 87);
+  /* background-color: #e81a1a; */
   margin: 0;
 }
 
@@ -67,5 +67,6 @@ body {
 }
 
 .links a {
-  color: white;
+  color: rgb(87, 87, 87);
+  font-weight: bold;
 }

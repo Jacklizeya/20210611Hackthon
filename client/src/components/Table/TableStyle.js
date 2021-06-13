@@ -21,12 +21,12 @@ export const Styles = styled.div`
     }
 
     .th {
-        font-size: 50%;
+        font-size: 85%;
         padding-top: 12px;
         padding-bottom: 12px;
         text-align: center;
-        background-color: #FC4445;
-        color: white;
+        background-color: #afc2cb;
+        color: rgb(87, 87, 87)
     },
     .td {
         overflow: hidden;
@@ -49,14 +49,18 @@ export const Styles = styled.div`
 
       .header {
         top: 0;
-        border: 4px solid rgb(5, 56, 107)
+        border: 2px solid rgb(5, 56, 107);
+        border-radius: 7px;
+    
       }
 
 
       .body-group {
         position: relative;
         z-index: 0;
-        border: 4px solid rgb(5, 56, 107)
+        border: 2px solid rgb(5, 56, 107);
+        border-radius: 7px;
+        
       }
 
       [data-sticky-td] {

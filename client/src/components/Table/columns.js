@@ -2,7 +2,7 @@ import { TypeColumnFilter, SelectColumnFilter } from "./Filters";
 
 export const columnHeaders = [
     {
-        Header: 'Garden Name',
+        Header: 'Pool Name',
         accessor: 'locationName',
         Filter: TypeColumnFilter,
         sticky: 'left',
