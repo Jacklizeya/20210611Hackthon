@@ -21,7 +21,7 @@ export default function Location() {
 
     useEffect(()=>{
         const getLocations = async() => {
-            const {data} = await axios.get("/api/locations", {headers: {"content-type": "application/json"}})
+            const {data} = await axios.get("/api/locations/listall", {headers: {"content-type": "application/json"}})
             console.log(data)
             setLocations(data) // could cause infinite loop
         }

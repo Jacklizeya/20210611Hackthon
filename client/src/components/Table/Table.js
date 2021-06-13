@@ -3,29 +3,27 @@ import { useTable, useSortBy, useFilters, useBlockLayout } from "react-table"
 import { useSticky } from 'react-table-sticky'
 import { Styles } from './TableStyle'
 import { columnHeaders } from "./columns"
-import { useHistory } from "react-router-dom"
 
-export default function GardenTable() {
+export default function SwimmingTable() {
   const loadingMessage = [{name: 'Loading...', address: "This won't take long!"}]
-  const [gardenList, setGardenList] = useState(loadingMessage)
+  const [swimmingList, setSwimmingList] = useState(loadingMessage)
+
   useEffect(() => {
-    const getAllGardens = async () => {
-      let fetchUrl = "/api/garden/get"
+    const getAllSwimming = async () => {
+      let fetchUrl = "/api/swimming/get"
       let response = await fetch(fetchUrl)
+      console.log(response)
       let resObject = await response.json()
-      let listResult = resObject.gardenList
+      let listResult = resObject.swimmingList
 
-      setGardenList(listResult)
+      setSwimmingList(listResult)
     }
-    getAllGardens()
+    getAllSwimming()
   }, [])
-
-  const history = useHistory()
-  const changeRoute = (val) => history.push(`/garden-page/${val}`)
 
   // Prevent re-rendering of data
   const columns = useMemo(() => columnHeaders, [])
-  const data = useMemo(() => gardenList, [gardenList]) 
+  const data = useMemo(() => swimmingList, [swimmingList]) 
 
   let tableInstance = useTable(
     {
@@ -34,7 +32,7 @@ export default function GardenTable() {
       initialState: {
         sortBy: [
             {
-                id: 'name',
+                id: 'locationName',
                 desc: false
             }
         ]
@@ -53,11 +51,8 @@ export default function GardenTable() {
     return (
       <div 
         style={{
-          display: 'flex', 
+          display: 'flex',
           justifyContent: 'center',
-          border: "4px solid #05386B",
-          borderRadius: '20px',
-          backgroundColor: '#edf5e1'
         }}
       >
         <Styles>
@@ -74,11 +69,11 @@ export default function GardenTable() {
                 </div>
               ))}
             </div>
-            <div {...getTableBodyProps()} className="body">
+            <div {...getTableBodyProps()} className="body-group">
               {firstPageRows.map((row) => {
                 prepareRow(row);
                 return (
-                  <div onClick={() => changeRoute(row.values.name)} {...row.getRowProps()} className="tr">
+                  <div className="tr">
                     {row.cells.map((cell) => (
                       <div {...cell.getCellProps()} className="td">
                         {cell.render('Cell')}

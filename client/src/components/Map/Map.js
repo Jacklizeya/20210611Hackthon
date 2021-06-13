@@ -25,11 +25,7 @@ const options = {
   zoomControl: true
 }
 
-export default function GardenMap({
-  isFormDisplayed,
-  formCoordinates,
-  setFormCoordinates
-}) {
+export default function GardenMap() {
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
     libraries
@@ -37,43 +33,25 @@ export default function GardenMap({
 
   // This is passed through the first Marker array
   const loadingMessage = [{name: 'Loading...', address: "This won't take long!", "coordinates":{"lat":"0","lng":"0"}}]
-  const [gardenList, setGardenList] = useState(loadingMessage)
+  const [swimmingList, setSwimmingList] = useState(loadingMessage)
   
   useEffect(() => {
-    const getAllGardens = async () => {
-      let fetchUrl = "/api/garden/get"
+    const getAllSwimming = async () => {
+      let fetchUrl = "/api/swimming/get"
       let response = await fetch(fetchUrl)
       let resObject = await response.json()
-      let listResult = resObject.gardenList
+      let listResult = resObject.swimmingList
 
-      setGardenList(listResult)
+      setSwimmingList(listResult)
     }
-    getAllGardens()
+    getAllSwimming()
   }, [])
 
   // Prevent re-rendering of data
-  const data = useMemo(() => gardenList, [gardenList])
 
-  const onMapClick = React.useCallback(
-    (event) => {
-      setFormCoordinates({
-        lat: event.latLng.lat(),
-        lng: event.latLng.lng()
-      })
-    },
-    [setFormCoordinates]
-  )
-
-  useEffect(() => {
-    if (isFormDisplayed) {
-      setFormCoordinates({
-        lat: 0,
-        lng: 0
-      })
-    }
-    // eslint-disable-next-line
-  }, [isFormDisplayed])
-
+  // Prevent re-rendering of data
+  const data = useMemo(() => swimmingList, [swimmingList])
+  
   const [selected, setSelected] = React.useState(null)
 
   if (loadError) return "Error loading maps"
@@ -85,27 +63,12 @@ export default function GardenMap({
         zoom={10.5}
         center={center}
         options={options}
-        onClick={isFormDisplayed ? onMapClick : null}
       >
-        {isFormDisplayed ? (
-          <Marker
-            key={"created_marker"}
-            position={{ lat: formCoordinates.lat, lng: formCoordinates.lng }}
-
-            /* icon={{
-                    url: "/vegetables.svg",
-                    scaledSize: new window.google.maps.Size(30,30),
-                    origin: new window.google.maps.Point(0,0),
-                    anchor: new window.google.maps.Point(15,15)
-                }} */
-          />
-        ) : null}
-
         {data.map(function (marker, index) {
           return (
             <Marker
-              key={marker.name}
-              position={{lat: parseFloat(marker.coordinates.lat), lng: parseFloat(marker.coordinates.lng)}}
+              key={marker.locationName}
+              position={{lat: parseFloat(marker.coordinates.lat), lng: parseFloat(marker.coordinates.Lng)}}
               onMouseOver={() => {
                 setSelected(marker)
               }}
@@ -115,12 +78,12 @@ export default function GardenMap({
 
         {selected ? (
           <InfoWindow
-            position={{lat: parseFloat(selected.coordinates.lat), lng: parseFloat(selected.coordinates.lng)}}
+            position={{lat: parseFloat(selected.coordinates.lat), lng: parseFloat(selected.coordinates.Lng)}}
             onCloseClick={() => {
               setSelected(null)
             }}
           >
-            <div style={{ fontWeight: "bold" }}>{selected.name}</div>
+            <div style={{ fontWeight: "bold" }}>{selected.locationName}</div>
           </InfoWindow>
         ) : null}
       </GoogleMap>

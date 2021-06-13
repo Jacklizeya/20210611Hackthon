@@ -37,13 +37,35 @@
   }
 }
 
-
-.navigation-bar {
-  /* display: inline block; */
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  background-color: red
+body {
+  background-color: #3feee6;
 }
 
+.page-content {
+  padding-top: 20px;
+}
+
+.nav-bar {
+  background-color: #FC4445;
+  color: black;
+  display:flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.page-title {
+  color: white;
+  background-color: #FC4445;
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  align-content: center;
+}
+
+.links a {
+  color: white;
+}

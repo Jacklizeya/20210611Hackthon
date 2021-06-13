@@ -1,56 +1,24 @@
-import { TypeColumnFilter, SelectColumnFilter, NumberRangeColumnFilter } from "./Filters";
+import { TypeColumnFilter, SelectColumnFilter } from "./Filters";
 
 export const columnHeaders = [
     {
         Header: 'Garden Name',
-        accessor: 'name',
+        accessor: 'locationName',
         Filter: TypeColumnFilter,
-        sticky: 'left'
+        sticky: 'left',
+        minWidth: 220
     },
     {
         Header: 'Address',
         accessor: 'address',
         Filter: TypeColumnFilter,
-        sticky: 'left'
+        sticky: 'left',
+        minWidth: 225
     },
     {
-        Header: 'Quadrant',
-        accessor: 'quadrant',
+        Header: 'Pool Type',
+        accessor: 'type',
         Filter: SelectColumnFilter,
-        sticky: 'left',
-        width: 80
-    },
-    /*{
-        Header: 'Latitude',
-        accessor: 'coordinates.lat',
-        Filter: TypeColumnFilter,
-        disableFilters: true
-    },
-    {
-        Header: 'Longitude',
-        accessor: 'coordinates.lng',
-        Filter: TypeColumnFilter,
-        disableFilters: true
-    },
-    {
-        Header: 'Plot Size (sqft)',
-        accessor: 'plotSize',
-        Filter: TypeColumnFilter
-    },*/
-    {
-        Header: '# of Plots',
-        accessor: 'numberOfPlots',
-        Filter: NumberRangeColumnFilter,
-        disableFilters: true,
-        sticky: 'left',
-        width: 80
-    },
-    {
-        Header: 'Established',
-        accessor: 'established',
-        Filter: NumberRangeColumnFilter,
-        disableFilters: true,
-        sticky: 'left',
-        width: 80
+        width: 110
     },
 ]

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Styles = styled.div`
   .table {
     font-family: Arial, Helvetica, sans-serif;
-    color:#05386B;
+    color:rgb(5, 56, 107);;
     
 
     .tr {
@@ -16,7 +16,8 @@ export const Styles = styled.div`
       :hover {
           background-color: #ddd
       }
-      background-color: #edf5e1
+      background-color: #edf5e1;
+      border: 1px solid rgb(5, 56, 107);
     }
 
     .th {
@@ -24,12 +25,13 @@ export const Styles = styled.div`
         padding-top: 12px;
         padding-bottom: 12px;
         text-align: center;
-        background-color: #05386B;
-        color: #edf5e1;
+        background-color: #FC4445;
+        color: white;
     },
     .td {
-        border: 1px solid #ddd;
         overflow: hidden;
+        width: 200px;
+        border-right: 1px solid rgb(5, 56, 107);
 
       :last-child {
         border-right: 0;
@@ -47,13 +49,14 @@ export const Styles = styled.div`
 
       .header {
         top: 0;
-        box-shadow: 0px 3px 3px #ccc;
+        border: 4px solid rgb(5, 56, 107)
       }
 
 
-      .body {
+      .body-group {
         position: relative;
         z-index: 0;
+        border: 4px solid rgb(5, 56, 107)
       }
 
       [data-sticky-td] {
@@ -61,11 +64,9 @@ export const Styles = styled.div`
       }
 
       [data-sticky-last-left-td] {
-        box-shadow: 2px 0px 3px #ccc;
       }
 
       [data-sticky-first-right-td] {
-        box-shadow: -2px 0px 3px #ccc;
       }
     }
   }
