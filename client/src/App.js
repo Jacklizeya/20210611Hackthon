@@ -18,7 +18,7 @@ function App() {
     
       <Switch>
         <div className='page-content'>
-          <Route path='/home'> 
+          <Route path='/'> 
             <Home />
           </Route>
         </div>
